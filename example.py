@@ -1,6 +1,35 @@
+import subprocess
+import json
+from urllib.parse import quote
 
 def get_coordinates(query):
-    if query == "Lima,Peru":
-        return -12.0621065,-77.0365256
-    else:
-        return 0,0
+    '''
+    Function that returns the latitude and longitude of a given query
+    
+    Parameters:
+    query (str): The query to search for
+
+    Returns:
+    tuple: The latitude and longitude of the query
+
+    Raises:
+    Exception: If the query is not found
+    
+    '''
+
+    # Encode the query parameter
+    encoded_query = quote(query)
+
+    # Uses the curl to make the API request
+    curl_command = f'curl "https://nominatim.openstreetmap.org/search?q={encoded_query}&format=json"'
+    result = subprocess.run(curl_command, shell=True, capture_output=True, text=True)
+
+    try:
+        data = json.loads(result.stdout)
+        if data:
+            latitude = float(data[0]['lat'])
+            longitude = float(data[0]['lon'])
+            return latitude, longitude
+    except (json.JSONDecodeError, KeyError, IndexError) as e:
+        print(f"Error while getting coordinates for {query}: {e}")
+        return None
