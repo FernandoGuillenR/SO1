@@ -2,10 +2,11 @@ import subprocess
 import json
 from urllib.parse import quote
 
+
 def get_coordinates(query):
-    '''
+    """
     Function that returns the latitude and longitude of a given query
-    
+
     Parameters:
     query (str): The query to search for
 
@@ -14,8 +15,8 @@ def get_coordinates(query):
 
     Raises:
     Exception: If the query is not found
-    
-    '''
+
+    """
 
     # Encode the query parameter
     encoded_query = quote(query)
@@ -27,8 +28,9 @@ def get_coordinates(query):
     try:
         data = json.loads(result.stdout)
         if data:
-            latitude = float(data[0]['lat'])
-            longitude = float(data[0]['lon'])
+            latitude = float(data[0]["lat"])
+            longitude = float(data[0]["lon"])
+
             return latitude, longitude
     except (json.JSONDecodeError, KeyError, IndexError) as e:
         print(f"Error while getting coordinates for {query}: {e}")
