@@ -32,6 +32,7 @@ def test_the_result_is_correct_for_cities():
         "Tokyo,Japan": (35.6828387, 139.7594549),
         "New York,USA": (40.7127281, -74.0060152),
         "Quito,Ecuador": (-0.2201641, -78.5123274),
+        "Lisbon,Portugal": (38.7077507, -9.1365919),
     }
 
     for city, expected_coordinates in cities.items():
