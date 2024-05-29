@@ -31,6 +31,7 @@ def test_the_result_is_correct_for_cities():
         "Asuncion,Paraguay": (-25.2637399, -57.575926),
         "Tokyo,Japan": (35.6828387, 139.7594549),
         "New York,USA": (40.7127281, -74.0060152),
+        "Quito,Ecuador": (-0.2201641, -78.5123274),
     }
 
     for city, expected_coordinates in cities.items():

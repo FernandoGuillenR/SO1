@@ -15,7 +15,6 @@ def get_coordinates(query):
 
     Raises:
     Exception: If the query is not found
-
     """
 
     # Encode the query parameter
