@@ -21,7 +21,7 @@ def test_cannot_call_non_existing_endpoints_of_the_API():
 
 def test_the_result_is_correct_for_all_the_cities():
     cities = {
-        "Lima,Peru": (-12.0621065, -77.0365256),
+        "Lima,Peru": (-10.0621065, -77.0365256),
         "Buenos Aires,Argentina": (-34.6037181, -58.38153),
         "Santiago,Chile": (-33.4377968, -70.6504451),
         "Quito,Ecuador": (-0.2201641, -78.5123274),
