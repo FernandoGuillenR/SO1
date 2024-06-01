@@ -24,13 +24,10 @@ def get_coordinates(query):
     curl_command = f'curl "https://nominatim.openstreetmap.org/search?q={encoded_query}&format=json"'
     result = subprocess.run(curl_command, shell=True, capture_output=True, text=True)
 
-    try:
-        data = json.loads(result.stdout)
-        if data:
-            latitude = float(data[0]["lat"])
-            longitude = float(data[0]["lon"])
+    data = json.loads(result.stdout)
+    if data:
+        latitude = float(data[0]["lat"])
+        longitude = float(data[0]["lon"])
 
-            return latitude, longitude
-    except (json.JSONDecodeError, KeyError, IndexError) as e:
-        print(f"Error while getting coordinates for {query}: {e}")
-        return None
+        return latitude, longitude
+
