@@ -17,6 +17,6 @@ jobs:
           ls ${{ github.workspace }}
       - name: Run tests
         run: |
-          make test
+          pytest test_structural.py
       - run: echo "✅ Tests ran successfully."
       - run: echo "🍏 This job's status is ${{ job.status }}."
