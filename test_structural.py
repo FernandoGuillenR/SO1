@@ -2,6 +2,8 @@ import pytest
 import example
 import math
 
+#Coverage 100%
+
 @pytest.mark.parametrize("city, expected_coordinates", [
     ("Lima,Peru", (-12.0621065, -77.0365256)),
     ("Buenos Aires,Argentina", (-34.6037181, -58.38153)),
