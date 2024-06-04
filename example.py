@@ -8,7 +8,7 @@ import json
 app = FastAPI()
 
 @app.get("/coordinates/{city}")
-async def get_coordinates(city: str) -> Tuple[float, float]:
+def get_coordinates(city: str) -> Tuple[float, float]:
     """
     Function that returns the latitude and longitude of a given city
 

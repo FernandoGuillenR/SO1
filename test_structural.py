@@ -2,6 +2,7 @@ import pytest
 import example
 import math
 
+
 #Coverage 100%
 
 @pytest.mark.parametrize("city, expected_coordinates", [
