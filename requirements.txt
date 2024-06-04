@@ -10,6 +10,7 @@ bleach==6.1.0
 blinker==1.8.2
 Brotli==1.1.0
 build==1.2.1
+cachetools==5.3.3
 certifi==2024.2.2
 cfgv==3.4.0
 charset-normalizer==3.3.2
